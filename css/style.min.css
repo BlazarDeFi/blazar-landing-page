@@ -96,9 +96,23 @@ main {
       height: 100%;
       background-image: url("../img/section-1/devices.png");
       background-repeat: no-repeat;
-      background-size: 60vw;
-      background-position: top -30px right -200px;
       z-index: 1; } }
+  @media (min-width: 1024px) {
+    .section-1::before {
+      background-size: 70vw;
+      background-position: top 30px right -200px; } }
+  @media (min-width: 1200px) {
+    .section-1::before {
+      background-size: 60vw;
+      background-position: top -30px right -200px; } }
+  @media (min-width: 1440px) {
+    .section-1::before {
+      background-size: 50vw;
+      background-position: top 0px right 0px; } }
+  @media (min-width: 1921px) {
+    .section-1::before {
+      background-size: 40vw;
+      background-position: top -100px right 200px; } }
   .section-1::after {
     position: absolute;
     content: "";
@@ -301,8 +315,7 @@ main {
     .overview-tagline {
       padding-right: 30px;
       margin-bottom: 0;
-      max-width: 455px;
-      min-height: 210px; } }
+      max-width: 455px; } }
   @media (min-width: 992px) {
     .overview-tagline {
       max-width: 100%; } }
@@ -384,7 +397,8 @@ main {
 
 .overview-image-wrapper {
   display: flex;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 55px; }
   @media (min-width: 575px) {
     .overview-image-wrapper {
       display: flex;
@@ -961,15 +975,30 @@ li.select2-results__option span {
         color: #f69855; }
         .section-use-cases .use-case-card.orange .button::before {
           background-image: url("../img/icons/orange-arrow.svg"); }
-    .section-use-cases .use-case-card.right-side-text .use-case-card--image-container {
-      position: absolute;
-      top: 35px;
-      left: -10px;
-      z-index: 0; }
-    .section-use-cases .use-case-card.right-side-text .use-case-card--description {
-      margin-left: 195px;
-      position: relative;
-      z-index: 1; }
+    .section-use-cases .use-case-card.right-side-text {
+      min-height: 335px; }
+      .section-use-cases .use-case-card.right-side-text .use-case-card--image-container {
+        position: absolute;
+        top: 35px;
+        left: -10px;
+        z-index: 0; }
+      .section-use-cases .use-case-card.right-side-text .use-case-card--description {
+        max-width: 300px;
+        position: absolute;
+        right: 15px;
+        z-index: 1; }
+        @media (max-width: 380px) {
+          .section-use-cases .use-case-card.right-side-text .use-case-card--description {
+            position: relative;
+            min-width: none; } }
+    @media (max-width: 600px) {
+      .section-use-cases .use-case-card .use-case-card--image-container img {
+        opacity: 0.14;
+        z-index: 0; }
+      .section-use-cases .use-case-card .use-case-card--description {
+        position: relative;
+        z-index: 1;
+        opacity: 1 !important; } }
 
 .section-3 {
   background-color: #F6F9FC;
@@ -1069,23 +1098,28 @@ li.select2-results__option span {
     background-position: center;
     transition: all 0.3s ease; }
 
-.section-partners {
-  height: 300px; }
-  @media (min-width: 1440px) {
-    .section-partners .wrapper {
-      padding-top: 65px;
-      padding-bottom: 92px; } }
-  .section-partners .section-title {
-    margin-bottom: 20px; }
-    @media (min-width: 768px) {
-      .section-partners .section-title {
-        margin-bottom: 56px; } }
-  .section-partners ul {
-    list-style: none; }
-  .section-partners .investor-and-media-item {
-    transition: all 0.3s ease; }
-    .section-partners .investor-and-media-item:hover {
-      transform: translateY(-5px); }
+@media (min-width: 1440px) {
+  .section-partners .wrapper {
+    padding-top: 65px;
+    padding-bottom: 92px; } }
+
+.section-partners .section-title {
+  margin-bottom: 20px; }
+  @media (min-width: 768px) {
+    .section-partners .section-title {
+      margin-bottom: 56px; } }
+
+.section-partners ul {
+  list-style: none; }
+
+.section-partners .investors-and-media-list {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.section-partners .investor-and-media-item {
+  transition: all 0.3s ease; }
+  .section-partners .investor-and-media-item:hover {
+    transform: translateY(-5px); }
 
 .section-4 {
   background-color: #F6F9FC; }
@@ -1243,10 +1277,15 @@ li.select2-results__option span {
       text-align: left; } }
 
 .follow-us-icons {
+  display: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 350px; }
+  max-width: 350px;
+  text-align: auto; }
+  @media (max-width: 767px) {
+    .follow-us-icons {
+      max-width: none; } }
   @media (min-width: 1200px) {
     .follow-us-icons {
       justify-content: space-between; } }
@@ -1294,6 +1333,6 @@ li.select2-results__option span {
     text-decoration: none; }
   @media (max-width: 480px) {
     .email-link {
-      padding-left: 50px; } }
+      padding-left: 20px; } }
 
 /*# sourceMappingURL=sourcemaps/style.min.css.map */
